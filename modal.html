@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <button id="myButton">Open Popup</button>
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <span class="close">&times;</span>
+                    <h2>Header content</h2>
+                </div>
+                <div class="popup-body">
+                    <p>Some text in the Body content</p>
+                    <p>Some other text...</p>
+                </div>
+                <div class="popup-footer">
+                    <h3>Footer content</h3>
+                </div>
+            </div>
+        </div>
+        <script>
+            var popup = document.getElementById("myPopup");
+            var button = document.getElementById("myButton");
+            var span = document.getElementsByClassName("close")[0];
+            button.onclick = function() {
+                popup.style.display = "block";
+            }
+            span.onclick = function() {
+                popup.style.display = "none";
+            }
+            window.onclick = function(event) {
+                console.log(event.target);
+                if (event.target == popup) {
+                    popup.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>
